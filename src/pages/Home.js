@@ -2,7 +2,7 @@ import { useState } from 'react';
 import React from 'react';
 // import { Component } from 'react';
 import Login from '../components/Login';
-// import Register from '../components/Register';
+import Register from '../components/Register';
 
 const Home = () => {
       const [openLoginModal, setLoginModal] = useState(false);

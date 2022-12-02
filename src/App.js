@@ -1,25 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import Clinic from './pages/Clinic';
+import Med_team from './pages/Med_team';
+import Games from './pages/Games';
+import Profile from './pages/Profile';
+import Home from './pages/Home';
+import Layout from './components/Layout';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import * as ReactDom from 'react-dom';
 
-function App() {
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="clinic" element={<Clinic />} />
+          <Route path="games" element={<Games />} />
+          <Route path="med_team" element={<Med_team />} />
+          <Route path="profile" element={<Profile />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
